@@ -9,6 +9,5 @@ public class LaboratoryDB {
     private List<Doctor> doctors = new ArrayList<>();
     private List<Assistant> assistants = new ArrayList<>();
     private List<Patient> patients = new ArrayList<>();
-    private List<DestinationList> destinationLists = new ArrayList<>();
     private List<Head> heads = new ArrayList<>();
 }
