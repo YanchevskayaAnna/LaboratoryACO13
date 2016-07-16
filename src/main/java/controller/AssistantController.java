@@ -1,6 +1,5 @@
 package controller;
 
-
 import model.Analysis;
 import model.LaboratoryDB;
 
