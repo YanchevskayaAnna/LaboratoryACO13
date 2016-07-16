@@ -32,13 +32,13 @@ public class LoginWindowController {
 
     public User loginFrame(String login, String password){
         User user= null;
-        for (Doctor doctor : laboratoryDB.getDoctors()){
+        for (User doctor : laboratoryDB.getDoctors()){
             if (doctor.getLogin().equals(login) && doctor.getPass().equals(password)){
                 user = doctor;
             }
         }
         if (user==null){
-            for (Assistant assistant : laboratoryDB.getAssistants()){
+            for (User assistant : laboratoryDB.getAssistants()){
                 if (assistant.getLogin().equals(login) && assistant.getPass().equals(password)){
                     user = assistant;
                 }
@@ -46,7 +46,7 @@ public class LoginWindowController {
         }
 
         if (user==null){
-            for (Head head : laboratoryDB.getHeads()){
+            for (User head : laboratoryDB.getHeads()){
                 if (head.getLogin().equals(login) && head.getPass().equals(password)){
                     user = head;
                 }
@@ -54,7 +54,7 @@ public class LoginWindowController {
         }
 
         if (user==null){
-            for (Patient patient : laboratoryDB.getPatients()){
+            for (User patient : laboratoryDB.getPatients()){
                 if (patient.getLogin().equals(login) && patient.getPass().equals(password)){
                     user = patient;
                 }

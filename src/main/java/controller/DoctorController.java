@@ -10,12 +10,15 @@ public class DoctorController implements IDoctorController {
 
     private LaboratoryDB laboratoryDB;
 
+    public DoctorController() {
+    }
+
     public DoctorController(LaboratoryDB laboratoryDB) {
         this.laboratoryDB = laboratoryDB;
     }
 
     @Override
-    public Patient addPatient(String login, String pass) {
+    public User addPatient(String login, String pass) {
         return null;
     }
 
@@ -25,37 +28,37 @@ public class DoctorController implements IDoctorController {
     }
 
     @Override
-    public Patient searchPatientByID(int id) {
+    public User searchPatientByID(int id) {
         return null;
     }
 
     @Override
-    public Patient searchPatientByLogin(String login) {
+    public User searchPatientByLogin(String login) {
         return null;
     }
 
     @Override
-    public List<Analysis> showAnalysisOfPatient(Patient patient) {
+    public List<Analysis> showAnalysisOfPatient(User patient) {
         return null;
     }
 
     @Override
-    public List<Analysis> showAnalysisOfPatient(Patient patient, Doctor doctor) {
+    public List<Analysis> showAnalysisOfPatient(User patient, User doctor) {
         return null;
     }
 
     @Override
-    public Boolean createAnalysis(Patient patient, Date date, KindOfAnalysis kind) {
+    public Boolean createAnalysis(User patient, Date date, KindOfAnalysis kind) {
         return null;
     }
 
     @Override
-    public Analysis findAnalysis(Patient patient, KindOfAnalysis kind) {
+    public Analysis findAnalysis(User patient, KindOfAnalysis kind) {
         return null;
     }
 
     @Override
-    public void saveHistory(String file, Patient patient) {
+    public void saveHistory(String file, User patient) {
 
     }
 
@@ -63,6 +66,7 @@ public class DoctorController implements IDoctorController {
     public List<Analysis> downloadHistory(String file) {
         return null;
     }
+
     public LaboratoryDB getLaboratoryDB() {
         return laboratoryDB;
     }

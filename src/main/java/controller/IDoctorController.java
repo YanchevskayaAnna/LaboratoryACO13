@@ -7,17 +7,17 @@ import java.util.List;
 
 public interface IDoctorController {
 
-    Patient addPatient(String login, String pass);
+    User addPatient(String login, String pass);
     Boolean removePatient(int id);
-    Patient searchPatientByID(int id);
-    Patient searchPatientByLogin(String login);
+    User searchPatientByID(int id);
+    User searchPatientByLogin(String login);
 
-    List<Analysis> showAnalysisOfPatient(Patient patient);
-    List<Analysis> showAnalysisOfPatient(Patient patient, Doctor doctor);
+    List<Analysis> showAnalysisOfPatient(User patient);
+    List<Analysis> showAnalysisOfPatient(User patient, User doctor);
 
-    Boolean createAnalysis(Patient patient, Date date, KindOfAnalysis kind);
-    Analysis findAnalysis(Patient patient, KindOfAnalysis kind);
+    Boolean createAnalysis(User patient, Date date, KindOfAnalysis kind);
+    Analysis findAnalysis(User patient, KindOfAnalysis kind);
 
-    void saveHistory(String file, Patient patient);
+    void saveHistory(String file, User patient);
     List<Analysis> downloadHistory(String file);
 }

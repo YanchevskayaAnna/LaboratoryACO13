@@ -71,23 +71,23 @@ public class LoginPassFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             LoginWindowController loginWindowController = new LoginWindowController(laboratoryDB);
             User user = loginWindowController.loginFrame(login.getText(),password.getText());
-            if (user instanceof Doctor){
-                DoctorFrame doctorFrame = new DoctorFrame(new DoctorController(laboratoryDB), (Doctor) user);
-                setVisible(false);
-            } else if (user instanceof Assistant){
-                AssistantFrame assistantFrame = new AssistantFrame(new AssistantController(laboratoryDB),(Assistant)user);
-                setVisible(false);
-            } else if (user instanceof Head){
-                HeadFrame headFrame = new HeadFrame(new HeadController(laboratoryDB),(Head)user);
-                setVisible(false);
-            } else if (user instanceof Patient){
-                PatientFrame patientFrame = new PatientFrame(new PatientController(laboratoryDB),(Patient)user);
-                setVisible(false);
-            } else {
+            if (user == null) {
                 login.setText("");
                 password.setText("");
                 incorrectPass.setText("invalid login or password");
                 incorrectPass.setForeground(Color.red);
+            } else if (user.getPosition() == Position.Doctor) {
+                DoctorFrame doctorFrame = new DoctorFrame(new DoctorController(laboratoryDB), user);
+                setVisible(false);
+            } else if (user.getPosition() == Position.Assistant) {
+                AssistantFrame assistantFrame = new AssistantFrame(new AssistantController(laboratoryDB), user);
+                setVisible(false);
+            } else if (user.getPosition() == Position.Head) {
+                HeadFrame headFrame = new HeadFrame(new HeadController(laboratoryDB), user);
+                setVisible(false);
+            } else if (user.getPosition() == Position.Patient) {
+                PatientFrame patientFrame = new PatientFrame(new PatientController(laboratoryDB), user);
+                setVisible(false);
             }
         }
     }

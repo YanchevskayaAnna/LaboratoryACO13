@@ -2,7 +2,7 @@ package controller;
 
 import model.LaboratoryDB;
 
-public class HeadController implements IHeadController {
+public class HeadController extends DoctorController implements IHeadController {
 
     private LaboratoryDB laboratoryDB;
 

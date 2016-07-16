@@ -1,15 +1,14 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Analysis {
 
-    private Date date;
     private int id;
+    private LocalDate dateStart;
+    private LocalDate dateFinish;
     private KindOfAnalysis kind;
-    private Doctor doctor;
-    private Assistant assistant;
-    private Patient patient;
+    private User assistant;
     private Result result;
     private Status status;
 

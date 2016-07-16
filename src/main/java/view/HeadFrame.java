@@ -1,8 +1,8 @@
 package view;
 
 import controller.HeadController;
-import model.Head;
 import model.LaboratoryDB;
+import model.User;
 
 import javax.swing.*;
 
@@ -10,9 +10,9 @@ public class HeadFrame extends JFrame {
 
     private HeadController headController;
     private LaboratoryDB laboratoryDB;
-    private Head head;
+    private User head;
 
-    public HeadFrame(HeadController headController, Head head) {
+    public HeadFrame(HeadController headController, User head) {
         this.head = head;
         this.headController = headController;
         this.laboratoryDB = headController.getLaboratoryDB();

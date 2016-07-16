@@ -2,7 +2,7 @@ package view;
 
 import controller.PatientController;
 import model.LaboratoryDB;
-import model.Patient;
+import model.User;
 
 import javax.swing.*;
 
@@ -10,9 +10,9 @@ public class PatientFrame extends JFrame {
 
     private PatientController patientController;
     private LaboratoryDB laboratoryDB;
-    private Patient patient;
+    private User patient;
 
-    public PatientFrame(PatientController patientController, Patient patient) {
+    public PatientFrame(PatientController patientController, User patient) {
         this.patientController = patientController;
         this.laboratoryDB = patientController.getLaboratoryDB();
         this.patient = patient;

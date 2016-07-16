@@ -7,4 +7,5 @@ public interface IAssistantController {
 
     List<Analysis> showNewAnalyzes();
 
+
 }

@@ -2,8 +2,9 @@ package view;
 
 
 import controller.AssistantController;
-import model.Assistant;
+
 import model.LaboratoryDB;
+import model.User;
 
 import javax.swing.*;
 
@@ -11,9 +12,9 @@ public class AssistantFrame extends JFrame {
 
     private AssistantController assistantController;
     private LaboratoryDB laboratoryDB;
-    private Assistant assistant;
+    private User assistant;
 
-    public AssistantFrame(AssistantController assistantController, Assistant assistant) {
+    public AssistantFrame(AssistantController assistantController, User assistant) {
         this.assistantController = assistantController;
         this.laboratoryDB = assistantController.getLaboratoryDB();
         this.assistant = assistant;
