@@ -14,4 +14,12 @@ public class User {
 
     public User() {
     }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPass() {
+        return pass;
+    }
 }
