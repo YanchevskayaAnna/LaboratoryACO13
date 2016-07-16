@@ -4,7 +4,9 @@ import controller.HeadController;
 import model.Head;
 import model.LaboratoryDB;
 
-public class HeadFrame {
+import javax.swing.*;
+
+public class HeadFrame extends JFrame {
 
     private HeadController headController;
     private LaboratoryDB laboratoryDB;
@@ -14,5 +16,16 @@ public class HeadFrame {
         this.head = head;
         this.headController = headController;
         this.laboratoryDB = headController.getLaboratoryDB();
+
+        setTitle("Head view");
+        setSize(600, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        init();
+        setVisible(true);
+    }
+
+    private void init(){
+        //TODO
     }
 }

@@ -4,7 +4,9 @@ import controller.PatientController;
 import model.LaboratoryDB;
 import model.Patient;
 
-public class PatientFrame {
+import javax.swing.*;
+
+public class PatientFrame extends JFrame {
 
     private PatientController patientController;
     private LaboratoryDB laboratoryDB;
@@ -14,5 +16,16 @@ public class PatientFrame {
         this.patientController = patientController;
         this.laboratoryDB = patientController.getLaboratoryDB();
         this.patient = patient;
+
+        setTitle("Patient view");
+        setSize(600, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        init();
+        setVisible(true);
+    }
+
+    private void init(){
+        //TODO
     }
 }
