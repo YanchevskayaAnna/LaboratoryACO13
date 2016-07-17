@@ -4,7 +4,7 @@ import java.util.*;
 
 public class LaboratoryDB {
 
-    private Map<String, Report> reports = new HashMap<>();
+    private Map<Integer, Report> reports = new HashMap<>();
     private Queue<Report> newReports = new PriorityQueue<>();
     private List<Report> reportsInProgress = new ArrayList<>();
     private List<User> doctors = new ArrayList<>();
@@ -12,11 +12,11 @@ public class LaboratoryDB {
     private List<User> patients = new ArrayList<>();
     private List<User> heads = new ArrayList<>();
 
-    public Map<String, Report> getReports() {
+    public Map<Integer, Report> getReports() {
         return reports;
     }
 
-    public void setReports(Map<String, Report> reports) {
+    public void setReports(Map<Integer, Report> reports) {
         this.reports = reports;
     }
 
