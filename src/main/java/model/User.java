@@ -1,6 +1,8 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
@@ -12,6 +14,9 @@ public class User {
     private String surname;
     private LocalDate dateOfBirth;
     private String phoneNumber;
+
+    private List<Integer> reportsInProgress = new ArrayList<>(); //? Все-таки нужна абстракция, потому что reportsInProgress будет только у ассистентов
+    private List<Integer> reports = new ArrayList<>(); //? Все-таки нужна абстракция, потому что reports будет только у пациентов
 
     public int getId() {
         return id;

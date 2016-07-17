@@ -5,8 +5,8 @@ import java.util.*;
 public class LaboratoryDB {
 
     private Map<Integer, Report> reports = new HashMap<>();
-    private Queue<Report> newReports = new PriorityQueue<>();
-    private List<Report> reportsInProgress = new ArrayList<>();
+    private Queue<Integer> newReports = new PriorityQueue<>();
+    //private List<Integer> reportsInProgress = new ArrayList<>(); ?
     private List<User> doctors = new ArrayList<>();
     private List<User> assistants = new ArrayList<>();
     private List<User> patients = new ArrayList<>();
@@ -20,21 +20,21 @@ public class LaboratoryDB {
         this.reports = reports;
     }
 
-    public Queue<Report> getNewReports() {
+    public Queue<Integer> getNewReports() {
         return newReports;
     }
 
-    public void setNewReports(Queue<Report> newReports) {
+    public void setNewReports(Queue<Integer> newReports) {
         this.newReports = newReports;
     }
 
-    public List<Report> getReportsInProgress() {
+  /*  public List<Integer> getReportsInProgress() {
         return reportsInProgress;
     }
 
-    public void setReportsInProgress(List<Report> reportsInProgress) {
+    public void setReportsInProgress(List<Integer> reportsInProgress) {
         this.reportsInProgress = reportsInProgress;
-    }
+    }*/
 
     public List<User> getDoctors() {
         return doctors;
