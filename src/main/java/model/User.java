@@ -1,53 +1,25 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements Comparable<User>, Serializable{
 
-    private int id;
-    private String login;
-    private String pass;
-    private Position position;
-    private String name;
-    private String surname;
-    private LocalDate dateOfBirth;
-    private String phoneNumber;
 
-    private List<Integer> reportsInProgress = new ArrayList<>(); //? Все-таки нужна абстракция, потому что reportsInProgress будет только у ассистентов
-    private List<Integer> reports = new ArrayList<>(); //? Все-таки нужна абстракция, потому что reports будет только у пациентов
+    protected String name;
+    protected String surname;
+    protected LocalDate dateOfBirth;
+    protected String phoneNumber;
+    protected String email;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
+    public User(String name, String surname, LocalDate dateOfBirth, String phoneNumber, String email) {
+        this.name = name;
+        this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public String getName() {
@@ -80,5 +52,51 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
+        return !(dateOfBirth != null ? !dateOfBirth.equals(user.dateOfBirth) : user.dateOfBirth != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (surname != null ? surname.hashCode() : 0);
+        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "  name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return 0;
     }
 }

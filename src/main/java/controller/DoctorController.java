@@ -1,73 +1,49 @@
 package controller;
 
+import exceptions.PatientCreationException;
+import exceptions.PatientNotFoundException;
+import model.Patient;
+import model.Report;
 
-import model.*;
-
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
-public class DoctorController implements IDoctorController {
+/**
+ * Created by gorobec on 17.07.16.
+ */
+public interface DoctorController {
+    /**
+     *
+     * @return Doctors patient report with status NEW
+     *
+     * */
+    Report createReport(String name, String surname, LocalDate dateOfBirth, String phoneNumber, String email)
+            throws PatientCreationException;
+//todo
+    Patient findPatient(String name, String surname, LocalDate dateOfBirth) throws PatientNotFoundException;
+/**
+ *
+ * @return Doctors patient reports with status IN_ASSISTANT_PROGRESS
+ *
+ * */
+    Map<Patient, Report> allPatientsInAssistantProgress();
 
-    private LaboratoryDB laboratoryDB;
+    /**
+     *
+     * @return Doctors patient reports with status IN_DOCTOR_PROGRESS,
+     *
+     * */
+    Map<Patient, Report> allPatientsInProgress();
 
-    public DoctorController() {
-    }
+    /**
+     *
+     * @return Doctors patient reports with status DONE,
+     *
+     * */
+    Map<Patient, List<Report>> allDonePatients();
 
-    public DoctorController(LaboratoryDB laboratoryDB) {
-        this.laboratoryDB = laboratoryDB;
-    }
 
-    @Override
-    public User addPatient(String login, String pass) {
-        return null;
-    }
 
-    @Override
-    public Boolean removePatient(int id) {
-        return null;
-    }
 
-    @Override
-    public User searchPatientByID(int id) {
-        return null;
-    }
-
-    @Override
-    public User searchPatientByLogin(String login) {
-        return null;
-    }
-
-    @Override
-    public List<Analysis> showAnalysisOfPatient(User patient) {
-        return null;
-    }
-
-    @Override
-    public List<Analysis> showAnalysisOfPatient(User patient, User doctor) {
-        return null;
-    }
-
-    @Override
-    public Boolean createAnalysis(User patient, Date date, KindOfAnalysis kind) {
-        return null;
-    }
-
-    @Override
-    public Analysis findAnalysis(User patient, KindOfAnalysis kind) {
-        return null;
-    }
-
-    @Override
-    public void saveHistory(String file, User patient) {
-
-    }
-
-    @Override
-    public List<Analysis> downloadHistory(String file) {
-        return null;
-    }
-
-    public LaboratoryDB getLaboratoryDB() {
-        return laboratoryDB;
-    }
 }

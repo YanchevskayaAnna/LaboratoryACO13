@@ -1,32 +1,21 @@
 package view;
 
-
-import controller.DoctorController;
-import model.LaboratoryDB;
-import model.User;
+import db.LaboratoryDB;
+import model.MedPersonal;
 
 import javax.swing.*;
 
-public class DoctorFrame extends JFrame {
+/**
+ * Created by gorobec on 17.07.16.
+ */
+public class DoctorFrame extends JFrame{
 
-    private DoctorController doctorController;
-    private LaboratoryDB laboratoryDB;
-    private User doctor;
 
-    public DoctorFrame(DoctorController doctorController, User doctor) {
-        this.doctorController = doctorController;
-        this.laboratoryDB = doctorController.getLaboratoryDB();
-        this.doctor = doctor;
+    public DoctorFrame(MedPersonal result, LaboratoryDB db) {
 
-        setTitle("Doctor view");
+        setTitle("DoctorFrame");
         setSize(600, 400);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        init();
         setVisible(true);
-}
-
-    private void init(){
-        //TODO
     }
 }

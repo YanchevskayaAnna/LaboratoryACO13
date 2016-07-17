@@ -1,16 +1,14 @@
 package controller;
 
-import model.LaboratoryDB;
+import exceptions.RegisterException;
+import model.Position;
 
-public class HeadController extends DoctorController implements IHeadController {
+import java.time.LocalDate;
 
-    private LaboratoryDB laboratoryDB;
-
-    public HeadController(LaboratoryDB laboratoryDB) {
-        this.laboratoryDB = laboratoryDB;
-    }
-
-    public LaboratoryDB getLaboratoryDB() {
-        return laboratoryDB;
-    }
+/**
+ * Created by gorobec on 17.07.16.
+ */
+public interface HeadController extends DoctorController {
+    boolean register(String name, String surname, LocalDate dateOfBirth, String phoneNumber,
+                     String email,  String login, String pass, Position position) throws RegisterException;
 }

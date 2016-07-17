@@ -1,0 +1,23 @@
+{
+  "reports": {},
+  "newReportsID": [],
+  "assistantsReportsId": {},
+  "doctorsReportsId": {},
+  "medPersonalsByLogin": {
+    "admin": {
+      "login": "admin",
+      "pass": "admin",
+      "position": "HEAD",
+      "name": "Adam",
+      "surname": "Smith",
+      "dateOfBirth": {
+        "year": 0,
+        "month": 1,
+        "day": 1
+      },
+      "phoneNumber": "+38093777-77-77",
+      "email": "adam@gmail.com"
+    }
+  },
+  "patientsReports": {}
+}

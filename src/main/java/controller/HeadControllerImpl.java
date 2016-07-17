@@ -3,5 +3,5 @@ package controller;
 /**
  * Created by gorobec on 17.07.16.
  */
-public interface AssistantController {
+public class HeadControllerImpl {
 }
