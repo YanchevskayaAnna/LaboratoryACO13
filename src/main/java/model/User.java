@@ -14,6 +14,10 @@ public class User implements Comparable<User>, Serializable{
     protected String phoneNumber;
     protected String email;
 
+
+    public User() {
+    }
+
     public User(String name, String surname, LocalDate dateOfBirth, String phoneNumber, String email) {
         this.name = name;
         this.surname = surname;
