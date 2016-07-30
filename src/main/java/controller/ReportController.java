@@ -2,17 +2,21 @@ package controller;
 
 import model.Analysis;
 import model.Result;
+import model.Status;
 
 import java.util.List;
 import java.util.Map;
-
-/**
- * Created by gorobec on 17.07.16.
- */
+//todo state pattern
 public interface ReportController {
 
-    void addConclusion(String conclusion);
+    boolean addConclusion(String conclusion);
+
     Map<Analysis, Result> showAnalysis();
+
+    boolean addResult(Analysis analys, Result result);
+
+    boolean changeStatus(Status status);
+
 
 
 }

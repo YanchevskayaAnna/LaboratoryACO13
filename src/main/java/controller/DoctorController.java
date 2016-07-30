@@ -9,40 +9,58 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by gorobec on 17.07.16.
- */
+
 public interface DoctorController {
     /**
+     *Creates new Patient in database
      *
-     * @return Doctors patient report with status NEW
+     * @param name name of new Patient
+     * @param surname surname of new Patient
+     * @param dateOfBirth birth day of new Patient
+     * @param phoneNumber phone number of new Patient
+     * @param email email address of new Patient
+     *
+     * @return new Patient instance
+     *
+     * @throws PatientCreationException if Patient already exist
      *
      * */
-    Report createReport(String name, String surname, LocalDate dateOfBirth, String phoneNumber, String email)
+    Patient createPatient(String name, String surname, LocalDate dateOfBirth, String phoneNumber, String email)
             throws PatientCreationException;
-//todo
+    /**
+     *Search certain Patient in database
+     *
+     * @param name name of searched Patient
+     * @param surname surname of searched Patient
+     * @param dateOfBirth birth day of searched Patient
+     *
+     * @return found Patient
+     *
+     * @throws PatientNotFoundException if Patient was not found
+     * */
+
     Patient findPatient(String name, String surname, LocalDate dateOfBirth) throws PatientNotFoundException;
-/**
- *
- * @return Doctors patient reports with status IN_ASSISTANT_PROGRESS
- *
- * */
-    Map<Patient, Report> allPatientsInAssistantProgress();
+
+    /**
+    *
+    * @return Doctors patients with status IN_ASSISTANT_PROGRESS
+    *
+    * */
+    List<Patient> allPatientsInAssistantProgress();
 
     /**
      *
-     * @return Doctors patient reports with status IN_DOCTOR_PROGRESS,
+     * @return Doctors patients with status IN_DOCTOR_PROGRESS,
      *
      * */
-    Map<Patient, Report> allPatientsInProgress();
+    List<Patient> allPatientsInDoctorProgress();
 
     /**
      *
-     * @return Doctors patient reports with status DONE,
+     * @return Doctors patients with status DONE,
      *
      * */
-    Map<Patient, List<Report>> allDonePatients();
-
+    List<Patient> allDonePatients();
 
 
 

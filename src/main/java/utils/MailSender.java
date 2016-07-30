@@ -9,9 +9,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
-/**
- * Created by gorobec on 20.07.16.
- */
+
 public class MailSender {
 
     private static final String ENCODING = "UTF-8";

@@ -106,8 +106,4 @@ public class Report {
         return id != null ? id.hashCode() : 0;
     }
 
-
-
-
-    //    private List<Analysis> analyzes = new ArrayList<>();
 }

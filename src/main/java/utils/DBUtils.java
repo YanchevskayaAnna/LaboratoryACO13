@@ -10,7 +10,7 @@ import java.io.IOException;
  * Created by gorobec on 17.07.16.
  */
 public class DBUtils {
-    private static final String DB_PATH = "/home/gorobec/Java/development/Teaching/ArtCode/LaboratoryACO13/src/main/resources/LaboratoryDB.txt";
+    private static final String DB_PATH = "./src/main/resources/LaboratoryDB.txt";
 
     private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 

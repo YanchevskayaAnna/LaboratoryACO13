@@ -3,6 +3,7 @@ import db.LaboratoryDB;
 import utils.DBUtils;
 import view.LoginPassFrame;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class RunApp {
@@ -11,10 +12,13 @@ public class RunApp {
         LaboratoryDB laboratoryDB = null;
         try {
             laboratoryDB = DBUtils.read();
-            LoginPassFrame loginPassFrame = new LoginPassFrame(new MedPersonalControllerImpl(laboratoryDB));
+            new LoginPassFrame(new MedPersonalControllerImpl(laboratoryDB));
         } catch (IOException e) {
             e.printStackTrace();
-//            todo can't connect to server frame
+           JOptionPane.showMessageDialog(null,
+            e.getMessage(),
+                    e.getClass().getName(),
+                    JOptionPane.ERROR_MESSAGE);
         }
 
 

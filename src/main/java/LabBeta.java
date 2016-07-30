@@ -17,7 +17,7 @@ public class LabBeta {
         LaboratoryDB db = new LaboratoryDB();
         MedPersonalController controller = new MedPersonalControllerImpl(db);
 
-        controller.register("Adam", "Smith", LocalDate.of(0, 1, 1), "+38093777-77-77", "adam@gmail.com", "admin", "admin", Position.HEAD);
-        DBUtils.save(db);
+        /*controller.register("Adam", "Smith", LocalDate.of(0, 1, 1), "+38093777-77-77", "adam@gmail.com", "admin", "admin", Position.HEAD);
+        DBUtils.save(db);*/
     }
 }

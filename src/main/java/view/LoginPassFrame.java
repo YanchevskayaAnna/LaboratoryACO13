@@ -61,12 +61,12 @@ public class LoginPassFrame extends JFrame {
                     case DOCTOR:
                         new DoctorFrame(result, controller.getDb());
                         break;
-                    /*case ASSISTANT:
+                    case ASSISTANT:
                         new AssistantFrame(result, controller.getDb());
                         break;
                     case HEAD:
                         new HeadFrame(result, controller.getDb());
-                        break;*/
+                        break;
                 }
                 LoginPassFrame.this.dispose();
             } catch (LoginException e1) {

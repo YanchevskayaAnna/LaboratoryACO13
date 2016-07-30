@@ -28,11 +28,6 @@ public class MedPersonalControllerImpl implements MedPersonalController{
 
     }
 
-    @Override
-    public boolean register(String name, String surname, LocalDate dateOfBirth, String phoneNumber, String email, String login, String pass, Position position) throws RegisterException {
-        this.medPersonal = db.saveMedPerson(name, surname, dateOfBirth, phoneNumber, email, login, pass, position);
-        return true;
-    }
 
     public LaboratoryDB getDb() {
         return db;
